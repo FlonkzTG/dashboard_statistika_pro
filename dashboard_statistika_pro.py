@@ -49,9 +49,9 @@ def generate_insight(df, mean_val, kkm):
     lulus = len(df[df['Status'] == 'LULUS'])
     gagal = len(df) - lulus
     
-    teks = f"Rata-rata kelas saat ini adalah **{mean_val:.1f}**. "
+    teks = f"Rata-rata mahasiswa saat ini adalah **{mean_val:.1f}**. "
     if gagal > (len(df) / 2): teks += f"Terdapat **{gagal} mahasiswa** (mayoritas) yang belum mencapai KKM. Diperlukan evaluasi metode pembelajaran."
-    else: teks += f"Kinerja kelas memuaskan, **{lulus} mahasiswa** berhasil lulus ujian."
+    else: teks += f"Kinerja mahasiswa memuaskan, **{lulus} mahasiswa** berhasil lulus ujian."
     return teks
 
 def bubble_sort_demo(arr):
@@ -70,7 +70,7 @@ with st.sidebar:
     kkm_input = st.number_input("Batas Kelulusan (KKM):", min_value=0, max_value=100, value=60)
     
     st.divider()
-    st.subheader("📥 Input Data Kelas")
+    st.subheader("📥 Input Data Nilai Mahasiswa")
     st.download_button("📄 Download Template Excel", data=get_excel_template(), file_name="Template_Data.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use_container_width=True)
     
     tipe_input = st.radio("Metode Input:", ["Ketik Manual", "Upload File (.xlsx / .csv)"])
