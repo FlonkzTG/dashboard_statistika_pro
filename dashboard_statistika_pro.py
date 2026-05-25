@@ -49,9 +49,9 @@ def generate_insight(df, mean_val, kkm):
     lulus = len(df[df['Status'] == 'LULUS'])
     gagal = len(df) - lulus
     
-    teks = f"Rata-rata mahasiswa saat ini adalah **{mean_val:.1f}**. "
-    if gagal > (len(df) / 2): teks += f"Terdapat **{gagal} mahasiswa** (mayoritas) yang belum mencapai KKM. Diperlukan evaluasi metode pembelajaran."
-    else: teks += f"Kinerja mahasiswa memuaskan, **{lulus} mahasiswa** berhasil lulus ujian."
+    teks = f"Rata-rata mahasiswa saat ini adalah <b>{mean_val:.1f}</b>. "
+    if gagal > (len(df) / 2): teks += f"Terdapat <b>{gagal} mahasiswa</b> (mayoritas) yang belum mencapai KKM. Diperlukan evaluasi metode pembelajaran."
+    else: teks += f"Kinerja mahasiswa memuaskan, <b>{lulus} mahasiswa</b> berhasil lulus ujian."
     return teks
 
 def bubble_sort_demo(arr):
@@ -186,7 +186,7 @@ if 'df_raw' in st.session_state and not st.session_state['df_raw'].empty:
     # == TAB 3: LAB ALGORITMA ==
     with tab3:
         st.markdown("#### 🔬 Pengujian Beban Algoritma (Sorting)")
-        st.write("Mensimulasikan cara mesin mengurutkan data nilai menggunakan **Bubble Sort** (Materi Matematika Diskrit / Struktur Data).")
+        st.write("Mensimulasikan cara mesin mengurutkan data nilai menggunakan <b>Bubble Sort</b> (Materi Matematika Diskrit / Struktur Data).")
         
         if st.button("Mulai Simulasi Sorting"):
             start_time = time.time()
